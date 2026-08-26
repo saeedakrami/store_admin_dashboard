@@ -1,3 +1,4 @@
+import { ProductPage } from "../../features/products";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 
@@ -6,7 +7,9 @@ const AppLayout = () => {
     <>
       <Header />
       <Sidebar />
-      <main>Content</main>
+      <main>
+        <ProductPage />
+      </main>
     </>
   );
 };

@@ -1,5 +1,18 @@
-const CategoryFilter = () => {
-  return <div>Category Filter</div>;
+type CategoryFilterProps = {
+  value: string;
+  onChange: (value: string) => void;
+};
+const CategoryFilter = ({ value, onChange }: CategoryFilterProps) => {
+  return (
+    <div>
+      <select value={value} onChange={(event) => onChange(event.target.value)}>
+        <option value="">All Categories</option>
+        <option value="mobile">Mobile</option>
+        <option value="laptop">Laptop</option>
+        <option value="audio">Audio</option>
+      </select>
+    </div>
+  );
 };
 
 export default CategoryFilter;
