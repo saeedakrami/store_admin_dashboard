@@ -16,12 +16,22 @@ const ProductPage = () => {
     { id: 3, name: "AirPods Pro", category: "Audio", price: 249 },
   ];
 
+  const filteredProducts: Product[] = products.filter((product) => {
+    const matchesSearch = product.name
+      .toLowerCase()
+      .includes(search.toLowerCase());
+
+    const matchesCategory = category === "" || product.category === category;
+
+    return matchesSearch && matchesCategory;
+  });
+
   return (
     <>
       <h1>Products</h1>
       <SearchBox value={search} onChange={setSearch} />
       <CategoryFilter value={category} onChange={setCategory} />
-      <ProductTable products={products} />
+      <ProductTable products={filteredProducts ?? []} />
       <Pagination page={page} onPageChange={setPage} totalPages={totalPages} />
     </>
   );

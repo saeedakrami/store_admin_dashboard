@@ -7,9 +7,9 @@ const CategoryFilter = ({ value, onChange }: CategoryFilterProps) => {
     <div>
       <select value={value} onChange={(event) => onChange(event.target.value)}>
         <option value="">All Categories</option>
-        <option value="mobile">Mobile</option>
-        <option value="laptop">Laptop</option>
-        <option value="audio">Audio</option>
+        <option value="Mobile">Mobile</option>
+        <option value="Laptop">Laptop</option>
+        <option value="Audio">Audio</option>
       </select>
     </div>
   );
